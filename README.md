@@ -23,9 +23,3 @@ A beautiful Tic-Tac-Toe game with a hand-drawn notebook design, featuring both P
 - **JavaScript** - Interactive game logic
 - **Minimax Algorithm** - Unbeatable AI
 
-## 🎯 How to Run
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/YOUR_USERNAME/Tic-Tac-Toe.git
-cd Tic-Tac-Toe
