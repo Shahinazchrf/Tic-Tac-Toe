@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="sheet">
+        <!-- Header -->
+        <h1>tic &middot; tac &middot; toe</h1>
+        <svg viewBox="0 0 180 10">
+            <path d="M2 6 C 40 2, 100 9, 178 4" stroke="var(--pencil)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Tabs: Game Mode -->
+        <div class="tabs">
+            <div class="tab active" data-mode="pvp">two players</div>
+            <div class="tab" data-mode="pva">vs computer</div>
+        </div>
+
+        <!-- Difficulty Selection -->
+        <div class="subrow hidden" id="difficultyRow">
+            <div class="pill active" data-diff="easy">easy</div>
+            <div class="pill" data-diff="medium">medium</div>
+            <div class="pill" data-diff="hard">unbeatable</div>
+        </div>
+
+        <!-- Board -->
+        <div class="board-wrap">
+            <svg viewBox="0 0 300 300">
+                <!-- Grid Lines -->
+                <path d="M101 8 C 98 90, 104 190, 99 292" stroke="var(--line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M104 6 C 100 100, 106 200, 102 294" stroke="var(--line)" stroke-width="1.5" fill="none" opacity="0.5"/>
+                <path d="M201 6 C 197 95, 203 195, 199 294" stroke="var(--line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M204 8 C 199 100, 206 190, 202 292" stroke="var(--line)" stroke-width="1.5" fill="none" opacity="0.5"/>
+                <path d="M8 101 C 95 97, 195 105, 292 100" stroke="var(--line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M6 104 C 100 99, 200 107, 294 103" stroke="var(--line)" stroke-width="1.5" fill="none" opacity="0.5"/>
+                <path d="M8 201 C 95 197, 195 205, 292 200" stroke="var(--line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M6 204 C 100 199, 200 207, 294 203" stroke="var(--line)" stroke-width="1.5" fill="none" opacity="0.5"/>
+                
+                <!-- Winning Line -->
+                <g id="winline"></g>
+            </svg>
+            
+            <!-- Cells -->
+            <div id="cells"></div>
+        </div>
+
+        <!-- Status -->
+        <div class="status" id="status">Your turn &mdash; <b>X</b></div>
+
+        <!-- Footer -->
+        <div class="footer-row">
+            <div class="score">
+                <span>X <b id="scoreX">0</b></span>
+                <span>O <b id="scoreO">0</b></span>
+                <span>ties <b id="scoreT">0</b></span>
+            </div>
+            <button class="newgame" id="newGame">new game &rarr;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/constants.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/board.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
